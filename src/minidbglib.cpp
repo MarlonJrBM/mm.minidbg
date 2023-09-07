@@ -20,12 +20,16 @@ int minidbg::Application::run(int argc, const char* argv[]) {
         ptrace(PTRACE_TRACEME, 0, nullptr, nullptr);
         execl(prog, prog, nullptr);
 
+
     } else if (pid >= 1) {
         // we're in the parent process
         // execute debugger
         std::cout << "Started debugging process " << pid << '\n';
         minidbg::Debugger debugger(prog, pid);
+        debugger.run();
     }
 
     return 0;
 }
+
+void minidbg::Debugger::run() {}
