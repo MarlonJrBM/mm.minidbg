@@ -2,6 +2,5 @@
 
 int main(int argc, const char* argv[]) { 
     minidbg::Application app;
-    app.run(argc, argv);
-    return 0;
+    return app.run(argc, argv);
 }

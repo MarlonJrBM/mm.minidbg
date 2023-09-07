@@ -8,6 +8,14 @@ project(Minidbg LANGUAGES CXX)
 
 find_package(Boost REQUIRED)
 
+include_directories(ext/libelfin ext/linenoise include)
+
+add_custom_target(
+   libelfin
+   COMMAND make
+   WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/ext/libelfin
+)
+
 # The compiled library code is here
 add_subdirectory(src)
 
