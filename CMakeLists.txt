@@ -4,7 +4,9 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
 
-project(Minidbg LANGUAGES CXX)
+project(Minidbg LANGUAGES CXX C)
+
+set(CMAKE_VERBOSE_MAKEFILE ON)
 
 find_package(Boost REQUIRED)
 

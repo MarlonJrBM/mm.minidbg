@@ -14,6 +14,10 @@ class Debugger {
     Debugger(const std::string& name_, pid_t pid_) : _programName(name_), _pid(pid_){};
     void run();
 
+    void handleCommand(const std::string& line_);
+
+    void continueExecution();
+
    private:
     std::string _programName;
     pid_t _pid;
